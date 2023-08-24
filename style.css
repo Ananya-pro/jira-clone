@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+  
+  .dropdown-container {
+    cursor: pointer;
+    position: relative;
+    margin-right: 12px;
+  }
+  
+  .dropdown {
+    background-color: #3d4040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .dropdown > * {
+    padding: 5px;
+  }
+  .dropdown:hover {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 20px 4px rgb(93, 93, 93);
+  }
+  
+  .dropdown-lists {
+    position: absolute;
+    top: 40px;
+    width: 140px;
+    display: none;
+    border: none;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0px 0px 8px 3px rgb(48, 48, 48);
+    background-color: rgb(215 212 212);
+    font-family: "Manrope", sans-serif;
+  }
+  
+  .toggle-container {
+    position: relative;
+    left: 555px;
+  }
+  
+  .toggle-button {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #242424;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    padding: 2px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 20%;
+    transform: translateX(-7%);
+    font-size: 18px;
+    color: #e6e4d8;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .fa-sun {
+    left: 5px;
+    opacity: 0;
+  }
+  
+  .fa-moon {
+    left: 35px;
+    opacity: 1;
+    color: #ffe658;
+  }
+  .toggle-button.active {
+    background-color: #8e8f8f;
+  }
+  
+  .toggle-button.active .fa-sun {
+    opacity: 1;
+  }
+  
+  .toggle-button.active .fa-moon {
+    opacity: 0;
+  }
+  
+  .lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .lists > * {
+    margin: 5px;
+  }
+  
+  #create {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #create:hover {
+    transform: scale(0.9);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 4px rgb(93, 93, 93);
+  }
+  
+  /* #create.dark:hover{
+    transform: scale(0.9);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 4px rgb(255, 253, 253);
+  } */
+  .modal-container {
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(89 89 89 / 39%);
+  }
+  
+  .modal {
+    border-radius: 12px;
+    background-color: rgb(215 212 212);
+    box-shadow: 1px -1px 10px 7px #6c6c6c;
+  }
+  
+  #close-button {
+    position: relative;
+    top: 5px;
+    padding: 7px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .modal > span :hover {
+    transform: scale(1.2);
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  
+  form > * {
+    margin: 12px;
+    border: none;
+    padding: 7px;
+    border-radius: 4px;
+    font-family: "Manrope", sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .tasks-containers {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  .tasks {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    height: 550px;
+    width: 400px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(215 212 212 / 87%);
+  }
+  
+  .tasks > h2 {
+    text-align: center;
+    padding-top: 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+  }
+  
+  .tasks-card {
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+    line-height: 1.3rem;
+    font-family: "Manrope", sans-serif;
+    text-align: left;
+    background-color: #f4f4f4;
+    width: 350px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  
+  .card-para{
+    word-wrap:break-word;
+  }
+  
+  /* Desktop screen size */
+  @media screen and (min-width: 1001px) and (max-width: 1347px) {
+    .toggle-container {
+      position: relative;
+      left: 365px;
+    }
+  
+    .tasks {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      height: 372px;
+      width: 283px;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(215, 212, 212, 0.87);
+    }
+  
+    .tasks-card {
+      cursor: grab;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 5px;
+      line-height: 1.3rem;
+      font-family: Manrope, sans-serif;
+      text-align: left;
+      background-color: rgb(244, 244, 244);
+      width: 253px;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+  
+  /* Tablet screen size */
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    .toggle-container {
+      position: relative;
+      left: 267px;
+    }
+  
+    .tasks {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      height: 340px;
+      width: 212px;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(215, 212, 212, 0.87);
+    }
+  
+    .tasks-card {
+      cursor: grab;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 5px;
+      line-height: 1.3rem;
+      font-family: Manrope, sans-serif;
+      text-align: left;
+      background-color: rgb(244, 244, 244);
+      width: 190px;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+  
+  /* Phone screen */
+  
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .toggle-container {
+      position: relative;
+      left: 52px;
+    }
+  
+    .tasks-containers {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 38px;
+      align-items: center;
+    }
+  
+    .tasks {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      height: 362px;
+      width: 290px;
+      border: none;
+      border-radius: 12px;
+      background-color: rgb(215 212 212 / 87%);
+    }
+  
+    .tasks-card {
+      cursor: grab;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 5px;
+      line-height: 1.3rem;
+      font-family: "Manrope", sans-serif;
+      text-align: left;
+      background-color: #f4f4f4;
+      width: 264px;
+      border: none;
+      border-radius: 8px;
+    }
+  }
